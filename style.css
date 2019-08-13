@@ -1,0 +1,338 @@
+@media all and (orientation:portrait) {
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #fff;
+}
+/*slider*/
+.slider {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    top: 21%;
+    opacity: 0;
+    transition: opacity 1s ease transform 0.6s ease;
+}
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+  transform: translateY(100px);
+}
+.slider__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.slider__item.active > div{
+    opacity: 1;
+}
+.slider__item.active .block_hide_swipe > div{
+    opacity: 1;
+}
+.slider__item .slider_image{
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 231px;
+    height: 274px;
+    left: 19%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.slider__item .slider_shadow{
+    display: block;
+    position: absolute;
+    top: 38.2%;
+    background-image: url('P_Fitbit/P_shadow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.4s;
+}
+.slider__item .slider_lable{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 70px;
+    left: 28%;
+    top: 54.5%;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.4s;
+}
+.slider__item .slider_price{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 124px;
+    height: 35px;
+    right: 9%;
+    top: 64.5%;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    transition-delay: 0.4s;
+}
+.slider__item .slider_inputs{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 134px;
+    height: 27px;
+    left: 33%;
+    top: 46.5%;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.4s;
+}
+.slider__item .slider_inputs > lable {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: relative;
+}
+.slider__item .slider_inputs > lable > input[type="radio"] {
+    opacity: 0;
+}
+.slider__item .slider_inputs > lable > input[type="radio"]:checked + img {
+
+    background: url(images/switch.png) no-repeat; /* Фоновый рисунок */
+}
+.slider__item .slider_inputs > lable > img{
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+}
+.slider__control {
+    position: absolute;
+    top: 20.1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    width: 35px;
+    background-repeat: no-repeat;
+    height: 35px;
+}
+
+.slider__control_left {
+    background-image: url('P_Fitbit/P_arrow_left.png');
+    left: 1%;
+    background-size: contain;
+
+}
+.slider__control_right {
+    background-image: url('P_Fitbit/P_arrow_right.png');
+    right: 1%; 
+    background-size: contain;
+
+}
+/*end slider*/
+/*container*/
+.container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('P_Fitbit/P_loading.jpg');
+    z-index: 999;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+.container.booted_up {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('P_Fitbit/P_bg.jpg');
+    z-index: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+/*oferta*/
+.oferta {
+    display: block;
+    position: fixed;
+    left: 2.4%;
+    background-image: url('P_Fitbit/P_date_tag.png');
+    background-size: 126px 48px;
+    background-repeat: no-repeat;
+    width: 126px;
+    height: 48px;
+    cursor: pointer;
+}
+/*end oferta*/
+/*fitbit*/
+.link_fitbit {
+    display: block;
+    position: fixed;
+    left: 3.9%;
+    top: 91.7%;
+    background-image: url('P_Fitbit/P_fitbit_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 129px;
+    height: 42px;
+    z-index: 40;
+}
+/*end fitbit*/
+/*comprar*/
+.link_comprar {
+    display: block;
+    position: fixed;
+    right: 1%;
+    top: 91.3%;
+    background-image: url('P_Fitbit/P_CTA.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 186px;
+    height: 45px;
+    z-index: 40;
+}
+/*end comprar*/
+/* intro_pricetag */
+.intro_pricetag {
+    display: block;
+    position: absolute;
+    top: 65.3%;
+    left: 33.5%;
+    background-image: url('P_Fitbit/P_intro_pricetag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 134px;
+    height: 134px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0.5s;
+}
+/* end intro_pricetag */
+/*main lable*/
+.main_lable {
+    display: block;
+    position: absolute;
+    top: 11.1%;
+    left: 14.8%;
+    background-image: url('P_Fitbit/P_main_copy.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 274px;
+    height: 61px;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+/*end main lable*/
+/* wrist watch */
+.wrist__watch_pink {
+    display: block;
+    position: absolute;
+    top: 25.2%;
+    left: -2%;
+    background-image: url('P_Fitbit/P_Versa_Pink.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 231px;
+    height: 274px;
+    transform: translateY(-100px);
+    z-index: 3;
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+.wrist__watch_violet {
+    display: block;
+    position: absolute;
+    top: 27.2%;
+    left: 30%;
+    background-image: url('P_Fitbit/P_Charge3_Lilac.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 205px;
+    height: 239px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.wrist__watch_gray {
+    display: block;
+    position: absolute;
+    top: 27.2%;
+    right: -3%;
+    background-image: url('P_Fitbit/P_HR_White.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 198px;
+    height: 231px;
+    z-index: 1;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+/*end wrist watch */
+/* wrist watch shadow */
+.wrist_watch_shadow {
+    display: block;
+    position: absolute;
+    top: 59.2%;
+    background-image: url('P_Fitbit/P_shadow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.5s;
+}
+/*end shadow*/
+/*end container*/
+/*events*/
+.active > * > * {
+    transform: translateY(0);
+    opacity: 1;
+}
+.active_hide > * {
+    opacity: 0;
+    z-index: 0;
+    transition-delay: 3s;
+    transition: opacity 0s;
+}
+.active_slider {
+    opacity: 1;
+    z-index: 5;
+    transition: 1s;
+}
+/*end events*/
+}
+    
+@media all and (orientation:landscape) {
+.container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('P_Fitbit/not_available.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    z-index: 999;
+}
+.block_hide_swipe{
+    display: none;
+}
+}
+    
